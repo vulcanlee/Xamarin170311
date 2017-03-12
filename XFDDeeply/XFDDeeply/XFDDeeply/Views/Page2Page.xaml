@@ -4,7 +4,8 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFDDeeply.Views.Page2Page"
-             Title="Page2" BackgroundColor="Green">
+             Title="Page2" BackgroundColor="Green"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout
         HorizontalOptions="Center" VerticalOptions="Center">

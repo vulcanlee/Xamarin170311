@@ -5,8 +5,14 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFDDeeply.Views.Page1Page"
              Title="Page1" BackgroundColor="Red"
+             NavigationPage.HasBackButton="False"
              >
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="儲存" />
+        <ToolbarItem Text="取消" />
+    </ContentPage.ToolbarItems>
+    
     <StackLayout
         HorizontalOptions="Center" VerticalOptions="Center">
         <Button Text="Switch Page2" Command="{Binding SwitchPage2}"/>
