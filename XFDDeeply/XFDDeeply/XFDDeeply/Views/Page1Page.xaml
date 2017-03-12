@@ -4,7 +4,11 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFDDeeply.Views.Page1Page"
-             Title="Page1"
+             Title="Page1" BackgroundColor="Red"
              >
-  
+
+    <StackLayout
+        HorizontalOptions="Center" VerticalOptions="Center">
+        <Button Text="Switch Page2" Command="{Binding SwitchPage2}"/>
+    </StackLayout>
 </ContentPage>

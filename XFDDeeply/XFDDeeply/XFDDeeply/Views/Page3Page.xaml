@@ -4,6 +4,6 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFDDeeply.Views.Page3Page"
-             Title="Page3">
+             Title="Page3" BackgroundColor="Pink">
   
 </ContentPage>
