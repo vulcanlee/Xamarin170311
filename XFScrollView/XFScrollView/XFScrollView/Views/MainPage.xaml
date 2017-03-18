@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFScrollView.Views.MainPage"
+             Title="MainPage">
+    <ScrollView
+        >
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="{Binding Title}" />
+            <Entry Placeholder="Please enter"/>
+            <Editor Text="Multi Line" HeightRequest="100" />
+            <BoxView Color="Green" WidthRequest="50" HeightRequest="80"/>
+            <Image Source="icon.png" WidthRequest="100" HeightRequest="100"/>
+            <DatePicker Date="2017/03/22" />
+            <TimePicker />
+            <WebView Source="https://www.google.com"/>
+            <ActivityIndicator IsRunning="True" />
+            <ProgressBar Progress="0.7"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
