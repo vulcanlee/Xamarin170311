@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:Renderers="clr-namespace:XFFontAwesome"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFFontAwesome.Views.MainPage"
+             Title="MainPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        
+        <!--這裡使用自動控制項 FontAwesomeLabel 來顯示出 Font Awesome 字體-->
+        <Renderers:FontAwesomeLabel
+                    Text="&#xf164;"
+                    TextColor="#ff3333"
+                    HorizontalOptions="Center"
+                    FontSize="60"
+                    Margin="0,0,20,0"
+                    />
+
+        <!--因為顯示文字有使用到 FontAwesome 字體，因此，有相對應的 Renderer 會切換使用 Font Awesome 字體-->
+        <!--這裡也將練習，如何在 XAML 中，指定要顯示那些 Font Awesome 的字型符號-->
+        <Label 
+                    Text="&#xf164;"
+                    TextColor="#ff3333"  
+                    HorizontalOptions="Center"
+                    FontSize="60"
+                    Margin="0,0,20,0"
+                    >
+
+            <Label.FontFamily>
+                <OnPlatform
+                            x:TypeArguments="x:String"
+                            iOS="fontawesome"
+                            Android="fontawesome"
+                            WinPhone="/Assets/Fonts/fontawesome.ttf#FontAwesome"
+                            />
+            </Label.FontFamily>
+        </Label>
+
+    </StackLayout>
+</ContentPage>
