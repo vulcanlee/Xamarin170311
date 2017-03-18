@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFEntry.Views.MainPage"
+             Title="MainPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <Entry Text="Hello" TextColor="Red"/>
+        <Entry Text="See" />
+        <Entry IsPassword="True" Placeholder="請輸入密碼" PlaceholderColor="Pink"/>
+        <Entry Keyboard="Numeric"/>
+    </StackLayout>
+</ContentPage>
