@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFGrid.Views.MainPage"
+             Title="MainPage">
+
+    <Grid
+        RowSpacing="0" ColumnSpacing="0"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <BoxView
+            Grid.Row="0" Grid.Column="0"
+            Color="Yellow"/>
+        <BoxView
+            Grid.Row="1" Grid.Column="1"
+            Color="Navy"/>
+        <BoxView
+            Grid.Row="2" Grid.Column="2"
+            Color="Red"/>
+        <BoxView
+            Grid.Row="2" Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Color="Gray"/>
+    </Grid>
+</ContentPage>
