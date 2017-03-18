@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:local="clr-namespace:XFTabbedPageLab.Views"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            x:Class="XFTabbedPageLab.Views.MainTabPage">
+
+    <TabbedPage.Children>
+        <local:Web1Page />
+        <local:Web2Page />
+        <ContentPage Title="網頁三">
+            <WebView
+                Source="http://m.facebook.com"/>
+        </ContentPage>
+    </TabbedPage.Children>
+    
+</TabbedPage>
