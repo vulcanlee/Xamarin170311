@@ -4,4 +4,12 @@
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
                         x:Class="XFListView1.App">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="myColor" >Red</Color>
+            <x:String x:Key="myApplication">我的第一個Xamarin.Forms應用程式</x:String>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+
 </prism:PrismApplication>
