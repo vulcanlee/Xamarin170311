@@ -29,9 +29,33 @@ namespace XFListView1.ViewModels
         }
         #endregion
 
-        public MainPageViewModel()
+
+        #region 已選擇的學生紀錄
+        private 學生 _已選擇的學生紀錄;
+        /// <summary>
+        /// 已選擇的學生紀錄
+        /// </summary>
+        public 學生 已選擇的學生紀錄
+        {
+            get { return this._已選擇的學生紀錄; }
+            set { this.SetProperty(ref this._已選擇的學生紀錄, value); }
+        }
+        #endregion
+
+
+        public DelegateCommand 點選項目Command { get; set; }
+
+        private readonly INavigationService _navigationService;
+        public MainPageViewModel(INavigationService navigationService)
         {
 
+            _navigationService = navigationService;
+            點選項目Command = new DelegateCommand(async () =>
+            {
+                NavigationParameters fooPara = new NavigationParameters();
+                fooPara.Add("Stud", 已選擇的學生紀錄);
+                await _navigationService.NavigateAsync("DetailPage", fooPara);
+            });
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
