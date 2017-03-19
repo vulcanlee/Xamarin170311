@@ -64,7 +64,7 @@ namespace XFListView1.ViewModels
             #endregion
 
             #region 頁面中綁定的命令
-            更新Command = new DelegateCommand(() =>
+            更新Command = new DelegateCommand(async () =>
             {
                 _eventAggregator.GetEvent<更新學生資料Event>().
                 Publish(new 要更新的學生資料
@@ -72,6 +72,9 @@ namespace XFListView1.ViewModels
                     oldname = OldName,
                     newname = 姓名,
                 });
+                await _navigationService.GoBackAsync();
+
+
             });
             #endregion
 

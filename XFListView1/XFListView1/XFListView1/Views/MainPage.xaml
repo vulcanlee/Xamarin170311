@@ -5,7 +5,8 @@
              xmlns:behavior="clr-namespace:Behaviors;assembly=Behaviors"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFListView1.Views.MainPage"
-             Title="MainPage">
+             Title="MainPage"
+             x:Name="ThisPage">
     <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
         <Label Text="{Binding Title}"
                HorizontalOptions="Center"/>
@@ -22,7 +23,16 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid>
-                            <Label Text="{Binding 姓名}" ></Label>
+                            <Label
+                                HorizontalOptions="Start"
+                                Text="{Binding 姓名}" ></Label>
+                            <Button
+                                Text="刪除" 
+                                HorizontalOptions="End"
+                                Command="{Binding Path=BindingContext.刪除Command,
+                                 Source={x:Reference ThisPage}}"
+                                CommandParameter="{Binding .}"
+                                />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
