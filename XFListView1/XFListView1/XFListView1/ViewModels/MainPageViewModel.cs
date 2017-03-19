@@ -1,4 +1,5 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -43,18 +44,31 @@ namespace XFListView1.ViewModels
         #endregion
 
 
+        private readonly IEventAggregator _eventAggregator;
         public DelegateCommand 點選項目Command { get; set; }
 
         private readonly INavigationService _navigationService;
-        public MainPageViewModel(INavigationService navigationService)
+        public MainPageViewModel(INavigationService navigationService,
+            IEventAggregator eventAggregator)
         {
 
+            _eventAggregator = eventAggregator;
             _navigationService = navigationService;
             點選項目Command = new DelegateCommand(async () =>
             {
                 NavigationParameters fooPara = new NavigationParameters();
                 fooPara.Add("Stud", 已選擇的學生紀錄);
                 await _navigationService.NavigateAsync("DetailPage", fooPara);
+            });
+
+            _eventAggregator.GetEvent<更新學生資料Event>()
+                .Subscribe(s =>
+            {
+                var fooObj = 學生s.FirstOrDefault(x => x.姓名 == s.oldname);
+                if(fooObj!=null)
+                {
+                    fooObj.姓名 = s.newname;
+                }
             });
         }
 

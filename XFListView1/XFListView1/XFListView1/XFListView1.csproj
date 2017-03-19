@@ -46,6 +46,7 @@
       <DependentUpon>NaviPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="學生.cs" />
+    <Compile Include="更新學生資料Event.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
