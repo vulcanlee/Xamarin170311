@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+                        x:Class="xfResource.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="確定按鈕顏色" >Green</Color>
+            <Color x:Key="取消按鈕顏色" >Red</Color>
+            <Color x:Key="輸入文字標題顏色" >Black</Color>
+            <x:Double x:Key="輸入文字標題大小">20</x:Double>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>
